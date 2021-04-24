@@ -42,8 +42,9 @@ const resolvers = {
     },
 
     deleteLink: (parent, args) => {
+      let linkIndex = links.findIndex((link) => link.id === args.id);
       links = links.filter((link, index) => link.id != args.id);
-      return links;
+      return links[linkIndex];
     },
   },
 };
